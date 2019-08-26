@@ -1,0 +1,65 @@
+{
+  "name": "mini-tools",
+  "version": "0.0.0",
+  "description": "my best project",
+  "main": "dist/mini-tools.cjs.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "test:cov": "npm run lint && jest --coverage",
+    "test": "npm run lint && jest --no-cache",
+    "lint": "xo",
+    "prepublishOnly": "npm run build",
+    "build": "bili"
+  },
+  "repository": {
+    "url": "caoyangyang/mini-tools",
+    "type": "git"
+  },
+  "author": "caoyangyang<hscaoyangyang@163.com>",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-jest": "^23.6.0",
+    "bili": "^3.3.0",
+    "eslint-config-prettier": "^3.3.0",
+    "eslint-config-rem": "^4.0.0",
+    "eslint-plugin-prettier": "^3.0.0",
+    "husky": "^1.0.0-rc.13",
+    "jest": "^23.6.0",
+    "lint-staged": "^7.2.0",
+    "prettier": "^1.15.2",
+    "xo": "^0.23.0"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "xo": {
+    "extends": [
+      "rem",
+      "plugin:prettier/recommended"
+    ],
+    "envs": [
+      "jest"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "xo --fix",
+      "git add"
+    ],
+    "*.{json,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  }
+}
