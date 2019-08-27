@@ -12,7 +12,7 @@
     "lint": "xo",
     "prepublishOnly": "npm run build",
     "version:patch": "npm version patch",
-    "build": "bili"
+    "build": "bili --format esm-min --format cjs-min"
   },
   "repository": {
     "url": "caoyangyang/mini-tools",
@@ -26,10 +26,10 @@
     "@babel/preset-env": "^7.5.5",
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "^23.6.0",
-    "bili": "^3.3.0",
-    "eslint-config-prettier": "^3.3.0",
+    "bili": "^4.0.0",
+    "eslint-config-prettier": "^3.15.0",
     "eslint-config-rem": "^4.0.0",
-    "eslint-plugin-prettier": "^3.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
     "husky": "^1.0.0-rc.13",
     "jest": "^23.6.0",
     "lint-staged": "^7.2.0",
